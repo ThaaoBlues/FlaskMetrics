@@ -168,9 +168,6 @@ class FlaskMetrics():
         
         return r
     
-    
-    
-    get_
         
         
     
