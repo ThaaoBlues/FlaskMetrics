@@ -138,11 +138,11 @@ class FlaskMetrics():
                 return False        
         
         
-    def get_visits_count(self,days=1,distinct=False)->int:
+    def get_visits_count(self,days=1,distinct=False,url="/")->int:
         
         with closing(self.connector.cursor()) as cursor:
             distinct = "GROUP BY IP_ADDR" if distinct else ""
-            return len(cursor.execute(f"SELECT * FROM METRICS WHERE DATE>=date('now','-{days} days') AND URL='/' {distinct}").fetchall())
+            return len(cursor.execute(f"SELECT * FROM METRICS WHERE DATE>=date('now','-{days} days') AND URL='{url}' {distinct}").fetchall())
     
     
     
@@ -167,6 +167,12 @@ class FlaskMetrics():
         
         
         return r
+    
+    
+    
+    get_
+        
+        
     
 
     
